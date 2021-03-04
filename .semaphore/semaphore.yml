@@ -11,3 +11,8 @@ blocks:
         - name: 'Job #1'
           commands:
             - checkout
+            - cache restore
+            - 'mvn verify sonar:sonar'
+            - cache store
+      secrets:
+        - name: SonarQube
